@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MovieTalks - Discover Your Next Favorite Film</title>
+    
+    <!-- External Resources -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+   
+    <link rel="stylesheet" href="movie.css">
+</head>
+
+<body>
+    <!-- Header with Navigation -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <!-- Brand Logo -->
+                <a href="#" class="logo">
+                    <i class="fas fa-film"></i>
+                    Movie<span>Talks</span>
+                </a>
+                
+                <!-- Main Navigation -->
+                <ul class="nav-links">
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="movie.html" class="active">Movies</a></li>
+                    <li><a href="mylist.html">My List</a></li>                 
+                    <li><a href="aboutus.html">About Us</a></li>
+                    <li><a href="contactus.html">Contact Us</a></li>
+                </ul>
+                
+                <!-- Search Functionality -->
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search movies...">
+                </div>
+                
+                <!-- User Account Actions -->
+                <div class="user-actions">
+                    <a href="#" aria-label="Notifications"><i class="fas fa-bell"></i></a>
+                    <a href="#" aria-label="User Profile"><i class="fas fa-user"></i></a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <div class="mobile-menu-btn" aria-label="Toggle navigation menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    
+
+    <!-- Main Content Section -->
+    <main>
+        <div class="container">
+            <!-- Filters Section -->
+            <section class="filters-section">  <div class="section-header">
+                    <h2 class="section-title">All Movies</h2>
+                     <div class="sort-group">
+                        <label for="sort">Sort By:</label>
+                        <select class="filter-select" id="sort">
+                            <option value="recent">Recently Added</option>                           
+                            <option value="rating">Highest Rating</option>                           
+                        </select>
+                    </div>
+                      </div>
+
+              
+
+                <div class="filters">
+                    <div class="filter-row">
+                        <!-- Genre Filter -->
+                        <div class="filter-group">
+                            <label for="genre">Genre</label>
+                            <select class="filter-select" id="genre">
+                                <option value="">All Genres</option>
+                                <option value="action">Action</option>
+                                <option value="comedy">Comedy</option>
+                                <option value="drama">Drama</option>
+                                <option value="sci-fi">Sci-Fi</option>
+                                <option value="horror">Horror</option>
+                                <option value="romance">Romance</option>
+                                <option value="thriller">Thriller</option>
+                            </select>
+                        </div>
+                        
+                        <!-- Year Filter -->
+                        <div class="filter-group">
+                            <label for="year">Release Year</label>
+                            <select class="filter-select" id="year">
+                                <option value="">All Years</option>
+                                <option value="2023">2023</option>
+                                <option value="2022">2022</option>
+                                <option value="2021">2021</option>
+                                <option value="2020">2020</option>
+                                <option value="2010s">2010-2019</option>
+                                <option value="2000s">2000-2009</option>
+                                <option value="1990s">1990-1999</option>
+                            </select>
+                        </div>
+                        
+                        <!-- Rating Filter -->
+                        <div class="filter-group">
+                            <label for="rating">Rating</label>
+                            <select class="filter-select" id="rating">
+                                <option value="">Any Rating</option>
+                                <option value="9">9+ Stars</option>
+                                <option value="8">8+ Stars</option>
+                                <option value="7">7+ Stars</option>
+                                <option value="6">6+ Stars</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <!-- Filter Action Buttons -->
+                    <div class="filter-buttons">
+                        <button class="btn-secondary">Reset Filters</button>
+                        <button class="btn-primary">Apply Filters</button>
+                    </div>
+                </div>
+                
+               
+            </section>
+
+            <!-- Movies Grid -->
+            <section class="movies-grid-section">
+                <div class="movies-grid">
+                    <!-- Movie Card 1 -->
+                    <div class="movie-card">
+                        <div class="card-image">
+                            <img src="edgeoftomorrow.jpeg" alt="Edge of Tomorrow action movie poster">
+                            <span class="card-badge">New</span>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Edge of Tomorrow</h3>
+                            <div class="card-meta">
+                                <span>2023 • Action</span>
+                                <span class="card-rating">
+                                    <i class="fas fa-star"></i> 4.8
+                                </span>
+                            </div>
+                            <p class="card-description">A soldier fighting aliens gets to relive the same day over and over again, becoming better skilled each time.</p>
+                            <div class="card-actions">
+                                <a href="#"><i class="fas fa-play"></i> Watch</a>
+                                <a href="#"><i class="fas fa-info-circle"></i> Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Movie Card 2 -->
+                    <div class="movie-card">
+                        <div class="card-image">
+                            <img src="cosmicoddesay.jpeg" alt="Cosmic Odyssey sci-fi movie poster">
+                            <span class="card-badge">Popular</span>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Cosmic Odyssey</h3>
+                            <div class="card-meta">
+                                <span>2022 • Sci-Fi</span>
+                                <span class="card-rating">
+                                    <i class="fas fa-star"></i> 4.6
+                                </span>
+                            </div>
+                            <p class="card-description">A team of astronauts embarks on a perilous journey through a newly discovered wormhole to find a new home for humanity.</p>
+                            <div class="card-actions">
+                                <a href="#"><i class="fas fa-play"></i> Watch</a>
+                                <a href="#"><i class="fas fa-info-circle"></i> Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Movie Card 3 -->
+                    <div class="movie-card">
+                        <div class="card-image">
+                            <img src="thelastletter.jpeg" alt="The Last Letter drama movie poster">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">The Last Letter</h3>
+                            <div class="card-meta">
+                                <span>2023 • Drama</span>
+                                <span class="card-rating">
+                                    <i class="fas fa-star"></i> 4.9
+                                </span>
+                            </div>
+                            <p class="card-description">A woman discovers a series of letters that reveal her grandmother's secret life during WWII.</p>
+                            <div class="card-actions">
+                                <a href="#"><i class="fas fa-play"></i> Watch</a>
+                                <a href="#"><i class="fas fa-info-circle"></i> Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Movie Card 4 -->
+                    <div class="movie-card">
+                        <div class="card-image">
+                            <img src="sutterisland.jpeg" alt="Silent Witness thriller movie poster">
+                            <span class="card-badge">Top 10</span>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Silent Witness</h3>
+                            <div class="card-meta">
+                                <span>2022 • Thriller</span>
+                                <span class="card-rating">
+                                    <i class="fas fa-star"></i> 4.7
+                                </span>
+                            </div>
+                            <p class="card-description">A crime reporter becomes the target of a serial killer after she witnesses a murder.</p>
+                            <div class="card-actions">
+                                <a href="#"><i class="fas fa-play"></i> Watch</a>
+                                <a href="#"><i class="fas fa-info-circle"></i> Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Movie Card 5 -->
+                    <div class="movie-card">
+                        <div class="card-image">
+                            <img src="matrix.jpeg" alt="Laugh Out Loud comedy movie poster">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Laugh Out Loud</h3>
+                            <div class="card-meta">
+                                <span>2023 • Comedy</span>
+                                <span class="card-rating">
+                                    <i class="fas fa-star"></i> 4.3
+                                </span>
+                            </div>
+                            <p class="card-description">A group of friends embark on a hilarious road trip that turns into an unexpected adventure.</p>
+                            <div class="card-actions">
+                                <a href="#"><i class="fas fa-play"></i> Watch</a>
+                                <a href="#"><i class="fas fa-info-circle"></i> Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Movie Card 6 -->
+                    <div class="movie-card">
+                        <div class="card-image">
+                            <img src="interstellar.jpeg" alt="Midnight Shadows horror movie poster">
+                            <span class="card-badge">Trending</span>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Midnight Shadows</h3>
+                            <div class="card-meta">
+                                <span>2023 • Horror</span>
+                                <span class="card-rating">
+                                    <i class="fas fa-star"></i> 4.5
+                                </span>
+                            </div>
+                            <p class="card-description">A family moves into a remote house only to discover it holds a dark secret that comes alive at night.</p>
+                            <div class="card-actions">
+                                <a href="#"><i class="fas fa-play"></i> Watch</a>
+                                <a href="#"><i class="fas fa-info-circle"></i> Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+                
+                <!-- Pagination Controls -->
+                <div class="pagination">
+                    <button class="active">1</button>
+                    <button>2</button>
+                    <button>3</button>
+                    <button>4</button>
+                    <button>5</button>
+                    <button aria-label="Next page"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <!-- Company Information -->
+                <div class="footer-column">
+                    <div class="footer-logo">Movie<span>Talks</span></div>
+                    <p class="footer-about">Your ultimate destination for movie reviews, recommendations, and entertainment news. Discover your next favorite film with us.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Movies</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> TV Shows</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> New Releases</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Top Rated</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Categories -->
+                <div class="footer-column">
+                    <h3>Categories</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Action</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Comedy</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Drama</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Sci-Fi</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Horror</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Support Links -->
+                <div class="footer-column">
+                    <h3>Support</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Contact Us</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> FAQ</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Help Center</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Privacy Policy</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Copyright Information -->
+            <div class="footer-bottom">
+                <p>&copy; 2023 Movie Talks. All Rights Reserved.</p>
+                <p>Made with <i class="fas fa-heart"></i> for movie lovers</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Interactive Elements -->
+   <script src="movie.js"></script>
+</body>
+</html>

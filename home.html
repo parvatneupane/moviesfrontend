@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MovieTalks - Your Cinema Experience</title>
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="home.css">
+</head>
+
+<body>
+    <!-- Header with navigation -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <!-- Logo section -->
+                <a href="#" class="logo">
+                    <i class="fas fa-film"></i>
+                    Movie<span>Talks</span>
+                </a>
+                
+                <!-- Main navigation links -->
+                <ul class="nav-links">
+                    <li><a href="home.html" class="active">Home</a></li>
+                    <li><a href="movie.html">Movies</a></li>
+                    <li><a href="mylist.html">My List</a></li>                    
+                    <li><a href="aboutus.html">About Us</a></li>
+                    <li><a href="contactus.html">Contact Us</a></li>
+                </ul>
+                
+                <!-- Search functionality -->
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search movies...">
+                </div>
+                
+                <!-- User account actions -->
+                <div class="user-actions">
+                    <a href="#" aria-label="Notifications"><i class="fas fa-bell"></i></a>
+                    <a href="#" aria-label="User profile"><i class="fas fa-user"></i></a>
+                </div>
+                
+                <!-- Mobile menu toggle -->
+                <div class="mobile-menu-btn" aria-label="Toggle navigation menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Video Slider Section (Replaces Hero) -->
+    <section class="video-slider-container">
+        <!-- Slide 1 -->
+        <div class="video-slide active">
+            <video muted loop autoplay>
+                <source src="video1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="slide-content">
+                <h2>Edge of Tomorrow</h2>
+                <p>A soldier fighting aliens gets to relive the same day over and over again, becoming better skilled each time.</p>
+                <div class="slide-meta">
+                    <span><i class="fas fa-clock"></i> 148 min</span>
+                    <span><i class="fas fa-calendar"></i> 2023</span>
+                    <span><i class="fas fa-tags"></i> Action, Sci-Fi</span>
+                    <span><i class="fas fa-globe"></i> United States</span>
+                </div>
+                <div class="slide-buttons">
+                    <button class="btn-primary">
+                        <i class="fas fa-play"></i> Watch Trailer
+                    </button>
+                    <button class="btn-secondary">
+                        <i class="fas fa-plus"></i> Add to Watchlist
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slide 2 -->
+        <div class="video-slide">
+            <video muted loop>
+                <source src="video2.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="slide-content">
+                <h2>Cosmic Odyssey</h2>
+                <p>A team of astronauts embarks on a perilous journey through a newly discovered wormhole to find a new home for humanity.</p>
+                <div class="slide-meta">
+                    <span><i class="fas fa-clock"></i> 136 min</span>
+                    <span><i class="fas fa-calendar"></i> 2022</span>
+                    <span><i class="fas fa-tags"></i> Sci-Fi, Adventure</span>
+                    <span><i class="fas fa-globe"></i> United States</span>
+                </div>
+                <div class="slide-buttons">
+                    <button class="btn-primary">
+                        <i class="fas fa-play"></i> Watch Trailer
+                    </button>
+                    <button class="btn-secondary">
+                        <i class="fas fa-plus"></i> Add to Watchlist
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slide 3 -->
+        <div class="video-slide">
+            <video muted loop>
+                <source src="video3.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="slide-content">
+                <h2>The Last Letter</h2>
+                <p>A woman discovers a series of letters that reveal her grandmother's secret life during WWII.</p>
+                <div class="slide-meta">
+                    <span><i class="fas fa-clock"></i> 122 min</span>
+                    <span><i class="fas fa-calendar"></i> 2023</span>
+                    <span><i class="fas fa-tags"></i> Drama, Romance</span>
+                    <span><i class="fas fa-globe"></i> United Kingdom</span>
+                </div>
+                <div class="slide-buttons">
+                    <button class="btn-primary">
+                        <i class="fas fa-play"></i> Watch Trailer
+                    </button>
+                    <button class="btn-secondary">
+                        <i class="fas fa-plus"></i> Add to Watchlist
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slider Controls -->
+        <div class="slider-controls">
+            <div class="slider-dot active" data-slide="0"></div>
+            <div class="slider-dot" data-slide="1"></div>
+            <div class="slider-dot" data-slide="2"></div>
+        </div>
+        
+        <!-- Slider Arrows -->
+        <div class="slider-arrows">
+            <div class="arrow prev"><i class="fas fa-chevron-left"></i></div>
+            <div class="arrow next"><i class="fas fa-chevron-right"></i></div>
+        </div>
+    </section>
+
+    <!-- Featured movies section -->
+    <section class="featured-movies">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Trending Now</h2>
+                <a href="#" class="view-all">
+                    View All <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+            
+            <!-- Grid of movie cards -->
+            <div class="movies-grid">
+                <!-- Movie Card 1 -->
+                <div class="movie-card">
+                    <div class="card-image">
+                        <img src="edgeoftomorrow.jpeg" alt="Action movie poster">
+                        <span class="card-badge">New</span>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Edge of Tomorrow</h3>
+                        <div class="card-meta">
+                            <span>2023 • Action</span>
+                            <span class="card-rating">
+                                <i class="fas fa-star"></i> 4.8
+                            </span>
+                        </div>
+                        <p class="card-description">A soldier fighting aliens gets to relive the same day over and over again, becoming better skilled each time.</p>
+                        <div class="card-actions">
+                            <a href="#"><i class="fas fa-play"></i> Watch</a>
+                            <a href="#"><i class="fas fa-info-circle"></i> Details</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Movie Card 2 -->
+                <div class="movie-card">
+                    <div class="card-image">
+                        <img src="cosmicoddesay.jpeg" alt="Sci-Fi movie poster">
+                        <span class="card-badge">Popular</span>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Cosmic Odyssey</h3>
+                        <div class="card-meta">
+                            <span>2022 • Sci-Fi</span>
+                            <span class="card-rating">
+                                <i class="fas fa-star"></i> 4.6
+                            </span>
+                        </div>
+                        <p class="card-description">A team of astronauts embarks on a perilous journey through a newly discovered wormhole to find a new home for humanity.</p>
+                        <div class="card-actions">
+                            <a href="#"><i class="fas fa-play"></i> Watch</a>
+                            <a href="#"><i class="fas fa-info-circle"></i> Details</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Movie Card 3 -->
+                <div class="movie-card">
+                    <div class="card-image">
+                        <img src="thelastletter.jpeg" alt="Drama movie poster">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">The Last Letter</h3>
+                        <div class="card-meta">
+                            <span>2023 • Drama</span>
+                            <span class="card-rating">
+                                <i class="fas fa-star"></i> 4.9
+                            </span>
+                        </div>
+                        <p class="card-description">A woman discovers a series of letters that reveal her grandmother's secret life during WWII.</p>
+                        <div class="card-actions">
+                            <a href="#"><i class="fas fa-play"></i> Watch</a>
+                            <a href="#"><i class="fas fa-info-circle"></i> Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Movie categories section -->
+    <section class="categories">
+        <div class="container">
+            <h2 class="section-title">Browse Categories</h2>
+            
+            <div class="categories-grid">
+                <div class="category-card">
+                    <i class="fas fa-rocket"></i>
+                    <h3>Sci-Fi</h3>
+                    <div class="count">5 titles</div>
+                </div>
+                
+                <div class="category-card">
+                    <i class="fas fa-gun"></i>
+                    <h3>Action</h3>
+                    <div class="count">5 titles</div>
+                </div>
+                
+                <div class="category-card">
+                    <i class="fas fa-heart"></i>
+                    <h3>Romance</h3>
+                    <div class="count">5 titles</div>
+                </div>
+                
+                <div class="category-card">
+                    <i class="fas fa-ghost"></i>
+                    <h3>Horror</h3>
+                    <div class="count">5 titles</div>
+                </div>
+                
+                <div class="category-card">
+                    <i class="fas fa-laugh"></i>
+                    <h3>Comedy</h3>
+                    <div class="count">5 titles</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer with site links and information -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <!-- Company information -->
+                <div class="footer-column">
+                    <div class="footer-logo">Movie<span>Talks</span></div>
+                    <p class="footer-about">Your ultimate destination for movie reviews, recommendations, and entertainment news. Discover your next favorite film with us.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Quick links -->
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="home.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Movies</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> TV Shows</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> New Releases</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Top Rated</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Categories links -->
+                <div class="footer-column">
+                    <h3>Categories</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Action</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Comedy</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Drama</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Sci-Fi</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Horror</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Support links -->
+                <div class="footer-column">
+                    <h3>Support</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Contact Us</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> FAQ</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Help Center</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Privacy Policy</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Copyright information -->
+            <div class="footer-bottom">
+                <p>&copy; 2023 Movie Talks. All Rights Reserved.</p>
+                <p>Made with <i class="fas fa-heart" style="color: var(--accent);"></i> for movie lovers</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript functionality -->
+    <script src="home.js"></script>
+</body>
+</html>

@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inception - Movie Details | MovieTalks</title>
+    
+    <!-- External Resources -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="moviedetail.css">
+
+
+    
+</head>
+
+<body>
+    <!-- Header with navigation -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <!-- Logo section -->
+                <a href="home.html" class="logo">
+                    <i class="fas fa-film"></i>
+                    Movie<span>Talks</span>
+                </a>
+                
+                <!-- Main navigation links -->
+                <ul class="nav-links">
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="movie.html">Movies</a></li>
+                    <li><a href="mylist.html">My List</a></li>                    
+                    <li><a href="aboutus.html">About Us</a></li>
+                    <li><a href="contactus.html">Contact Us</a></li>
+                </ul>
+                
+                <!-- Search functionality -->
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search movies...">
+                </div>
+                
+                <!-- User account actions -->
+                <div class="user-actions">
+                    <a href="#" aria-label="Notifications"><i class="fas fa-bell"></i></a>
+                    <a href="#" aria-label="User profile"><i class="fas fa-user"></i></a>
+                </div>
+                
+                <!-- Mobile menu toggle -->
+                <div class="mobile-menu-btn" aria-label="Toggle navigation menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Movie Hero Section -->
+    <section class="movie-hero">
+        <div class="container">
+            <div class="movie-hero-content">
+                <!-- Updated: Replaced poster with trailer -->
+                <div class="movie-trailer">
+                    <div class="trailer-iframe-container">
+                        <iframe 
+                            src="https://www.youtube.com/embed/YoHD9XEInc0" 
+                            title="Inception Official Trailer" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+                
+                <div class="movie-info">
+                    <h1 class="movie-title">Inception</h1>
+                    
+                    <div class="movie-meta">
+                        <span><i class="fas fa-star"></i> 4.8</span>
+                        <span><i class="fas fa-clock"></i> 148 min</span>
+                        <span><i class="fas fa-calendar-alt"></i> 2010</span>
+                        <span><i class="fas fa-film"></i> PG-13</span>
+                    </div>
+                    
+                    <div class="movie-actions">
+                        <button class="btn btn-watchlist" id="watchlist-btn">
+                            <i class="fas fa-plus"></i> Add to Watchlist
+                        </button>
+                    </div>
+                    
+                    <p class="movie-description">
+                        A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.
+                    </p>
+                </div>
+                  
+            </div>
+
+
+                <div class="movieinfo">
+
+                        
+                    <div class="movie-details-grid">
+                        <div class="detail-item">
+                            <span class="detail-label">Director:</span>
+                            <span class="detail-value">Christopher Nolan</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Writers:</span>
+                            <span class="detail-value">Christopher Nolan</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Stars:</span>
+                            <span class="detail-value">Leonardo DiCaprio, Joseph Gordon-Levitt, Ellen Page</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Genres:</span>
+                            <span class="detail-value">Action, Adventure, Sci-Fi</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Release Date:</span>
+                            <span class="detail-value">July 16, 2010</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Production:</span>
+                            <span class="detail-value">Warner Bros. Pictures</span>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            <div class="rating-container">
+
+                    <div class="user-rating">
+                <h3 class="user-rating-title">Your Rating</h3>
+                <div class="star-rating">
+                    <i class="fas fa-star" data-value="1"></i>
+                    <i class="fas fa-star" data-value="2"></i>
+                    <i class="fas fa-star" data-value="3"></i>
+                    <i class="fas fa-star" data-value="4"></i>
+                    <i class="fas fa-star" data-value="5"></i>
+                </div>
+                <button class="rating-submit">Submit Rating</button>
+            </div>
+
+
+
+            <div class="rating-overview">
+                <div class="average-rating">
+                    <div class="rating-score">4.8</div>
+                    <div class="rating-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <div class="rating-count">Based on 2.4K reviews</div>
+                </div>
+                
+                <!-- Simplified rating display -->
+                <div class="rating-simple">
+               
+                    <div class="rating-simple-text">Excellent rating from viewers</div>
+                </div>
+                
+            </div>
+     
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container">
+
+        
+        <!-- Reviews Section -->
+        <section class="reviews-section">
+            <h2 class="section-title">User Reviews</h2>
+            
+            <div class="review-form">
+                <h3>Write a Review</h3>
+                <form>
+                    <div class="form-group">
+                        <label for="review-title">Review Title</label>
+                        <input type="text" id="review-title" class="form-input" placeholder="Enter a title for your review">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="review-content">Your Review</label>
+                        <textarea id="review-content" class="form-input" placeholder="Share your thoughts about this movie"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="review-submit">Submit Review</button>
+                </form>
+            </div>
+            
+            <div class="reviews-list">
+                <!-- Review 1 -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer">
+                            <div class="reviewer-avatar">
+                                <img src="https://source.unsplash.com/random/100x100/?person,man" alt="User Avatar">
+                            </div>
+                            <div>
+                                <div class="reviewer-name">Parvat Neupane</div>
+                                <div class="review-date">July 20, 2023</div>
+                            </div>
+                        </div>
+                        <div class="review-rating">
+                            <div class="rating-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h4>Mind-blowing masterpiece!</h4>
+                    <div class="review-content">
+                        <p>Inception is a cinematic masterpiece that challenges the viewer's perception of reality. Christopher Nolan's direction is impeccable, and the performances by the entire cast are outstanding. The visual effects are groundbreaking and still hold up today.</p>
+                    </div>
+                </div>
+                
+                <!-- Review 2 -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer">
+                            <div class="reviewer-avatar">
+                                <img src="https://source.unsplash.com/random/100x100/?person,woman" alt="User Avatar">
+                            </div>
+                            <div>
+                                <div class="reviewer-name">Shiva Bhandari</div>
+                                <div class="review-date">June 15, 2023</div>
+                            </div>
+                        </div>
+                        <div class="review-rating">
+                            <div class="rating-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h4>Visually stunning but confusing at times</h4>
+                    <div class="review-content">
+                        <p>Inception is a visual spectacle with incredible action sequences and stunning cinematography. The concept is original and thought-provoking. However, I found the plot to be quite complex and had to watch it twice to fully understand everything that was happening.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Similar Movies Section -->
+        <section class="similar-movies">
+            <h2 class="section-title">You Might Also Like</h2>
+            
+            <div class="movies-grid">
+                <!-- Movie 1 -->
+                <div class="movie-card">
+                    <div class="movie-card-poster">
+                        <img src="interstellar.jpeg" alt="Interstellar">
+                    </div>
+                    <div class="movie-card-info">
+                        <h3 class="movie-card-title">Interstellar</h3>
+                        <div class="movie-card-year">2014</div>
+                    </div>
+                </div>
+                
+                <!-- Movie 2 -->
+                <div class="movie-card">
+                    <div class="movie-card-poster">
+                        <img src="matrix.jpeg" alt="The Matrix">
+                    </div>
+                    <div class="movie-card-info">
+                        <h3 class="movie-card-title">The Matrix</h3>
+                        <div class="movie-card-year">1999</div>
+                    </div>
+                </div>
+                
+                <!-- Movie 3 -->
+                <div class="movie-card">
+                    <div class="movie-card-poster">
+                        <img src="tneet.jpeg" alt="Tenet">
+                    </div>
+                    <div class="movie-card-info">
+                        <h3 class="movie-card-title">Tenet</h3>
+                        <div class="movie-card-year">2020</div>
+                    </div>
+                </div>
+                
+                <!-- Movie 4 -->
+                <div class="movie-card">
+                    <div class="movie-card-poster">
+                        <img src="sutterisland.jpeg" alt="Shutter Island">
+                    </div>
+                    <div class="movie-card-info">
+                        <h3 class="movie-card-title">Shutter Island</h3>
+                        <div class="movie-card-year">2010</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <!-- Company Information -->
+                <div class="footer-column">
+                    <div class="footer-logo">Movie<span>Talks</span></div>
+                    <p class="footer-about">Your ultimate destination for movie reviews, recommendations, and entertainment news. Discover your next favorite film with us.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="home.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="movie.html"><i class="fas fa-chevron-right"></i> Movies</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> TV Shows</a></li>
+                        <li><a href="newreleases.html"><i class="fas fa-chevron-right"></i> New Releases</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Top Rated</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Categories -->
+                <div class="footer-column">
+                    <h3>Categories</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Action</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Comedy</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Drama</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Sci-Fi</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Horror</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Support Links -->
+                <div class="footer-column">
+                    <h3>Support</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Contact Us</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> FAQ</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Help Center</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Privacy Policy</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Copyright Information -->
+            <div class="footer-bottom">
+                <p>&copy; 2023 Movie Talks. All Rights Reserved.</p>
+                <p>Made with <i class="fas fa-heart" style="color: var(--accent);"></i> for movie lovers</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Functionality -->
+   <script src="moviedetail.js"></script>
+</body>
+</html>

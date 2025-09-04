@@ -1,0 +1,271 @@
+/* ========== COLOR VARIABLES ========== */
+/* We define our color palette first for easy theme management */
+:root {
+    --primary: #141432;       /* Main dark blue background */
+    --secondary: #1d1d42;     /* Slightly lighter blue for contrast */
+    --accent: #e50914;        /* Brand red for primary actions */
+    --accent-hover: #ff4d85;  /* Softer pink for hover states */
+    --text: #ffffff;          /* Primary white text */
+    --text-secondary: #b3b3b3;/* Secondary gray text */
+    --card-bg: #23234b;       /* Card background color */
+    --input-bg: #2d2d5d;      /* Input field background */
+    --border: #2a2a3a;        /* Border color for elements */
+    --success: #05d9e8;       /* Teal for links and accents */
+}
+
+/* ========== GLOBAL STYLES ========== */
+/* Reset default browser styles and set up base typography */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Main page styling with gradient background */
+body {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    color: var(--text);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Link styling with smooth color transition */
+a {
+    text-decoration: none;
+    color: var(--text);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent);
+}
+
+/* ========== LOGIN CARD CONTAINER ========== */
+/* Main card that holds the login form */
+.login-container {
+    width: 100%;
+    max-width: 450px;
+    background: var(--card-bg);
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+/* Inner spacing for the card content */
+.login-bg {
+    padding: 40px;
+}
+
+/* ========== BRANDING & LOGO ========== */
+/* Company logo and branding elements */
+.logo {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.logo h3 {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: var(--accent);
+    margin-bottom: 10px;
+}
+
+/* Decorative divider line */
+.logo hr {
+    border: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--success), transparent);
+    margin: 15px 0;
+}
+
+/* ========== FORM HEADER ========== */
+/* Title above the form fields */
+.login-title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.login-title h1 {
+    font-size: 1.8rem;
+    color: var(--accent);
+    font-weight: 600;
+}
+
+/* ========== FORM ELEMENTS ========== */
+/* Label styling for input fields */
+.login-input-head {
+    margin-bottom: 8px;
+}
+
+.login-input-head p {
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+/* Input field container with icon */
+.login-input-area {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+/* Actual input field styling */
+.login-input-area input {
+    width: 100%;
+    padding: 15px 15px 15px 45px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--input-bg);
+    color: var(--text);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+/* Focus state for inputs */
+.login-input-area input:focus {
+    outline: none;
+    border-color: var(--success);
+    box-shadow: 0 0 0 2px rgba(5, 217, 232, 0.2);
+}
+
+/* Icon inside input fields */
+.login-input-area i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+/* ========== FORM OPTIONS ========== */
+/* Forgot password link */
+.forgot-password {
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.forgot-password a {
+    color: var(--success);
+    font-size: 0.9rem;
+}
+
+.forgot-password a:hover {
+    text-decoration: underline;
+}
+
+/* Remember me checkbox */
+.login-keep-me {
+    margin-bottom: 25px;
+}
+
+/* Custom checkbox styling */
+.checkbox {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+/* Hide default checkbox */
+.checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Custom checkbox design */
+.checkbox i {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: var(--input-bg);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    margin-right: 10px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+/* Checked state styling */
+.checkbox input:checked + i {
+    background: var(--success);
+    border-color: var(--success);
+}
+
+/* Checkmark indicator */
+.checkbox input:checked + i::after {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+/* ========== SUBMIT BUTTON ========== */
+/* Login button container */
+.login-button-pro {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Main call-to-action button */
+.login-button {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(90deg, var(--accent) 0%, var(--accent-hover) 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Button hover effect */
+.login-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(229, 9, 20, 0.6);
+}
+
+/* ========== SECONDARY ACTIONS ========== */
+/* Back to home link */
+.back-home {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.back-home a {
+    color: var(--success);
+    font-weight: 500;
+}
+
+.back-home a:hover {
+    text-decoration: underline;
+}
+
+/* ========== MOBILE RESPONSIVENESS ========== */
+/* Adjust styles for smaller screens */
+@media (max-width: 576px) {
+    .login-bg {
+        padding: 30px 20px;
+    }
+    
+    .logo h3 {
+        font-size: 1.8rem;
+    }
+    
+    .login-title h1 {
+        font-size: 1.5rem;
+    }
+}
