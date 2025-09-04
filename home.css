@@ -187,60 +187,76 @@ header {
     font-size: 1rem;
 }
 
-.user-actions {
-    display: flex;
-    gap: 15px;
-    align-items: center;
-    position: relative;
-}
+        /* User dropdown styles */
+        .user-dropdown {
+            position: relative;
+        }
 
-/* Dropdown container */
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
+        #mainBtn {
+              background: rgba(255, 255, 255, 0.08);
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            color: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
 
-/* Hidden by default */
-.dropdown-menu {
-    display: none;
-    position: absolute;
-    top: 100%; /* Below the icon */
-    right: 0;
-    background: white;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    min-width: 150px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    z-index: 1000;
-}
+        #mainBtn:hover {
+            background: var(--accent-hover);
+            transform: scale(1.1);
+        }
 
-/* Dropdown links */
-.dropdown-menu a {
-    display: block;
-    padding: 10px;
-    text-decoration: none;
-    color: #333;
-    font-size: 14px;
-    transition: background 0.2s;
-}
+     
+        #options {
+            position: absolute;
+            top: 50px;
+            right: 0;
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 10px 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: var(--transition);
+            z-index: 1000;
+            min-width: 150px;
+        }
 
-.dropdown-menu a:hover {
-    background: #f0f0f0;
-}
+        #options.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
 
-/* Show on hover */
-.dropdown:hover .dropdown-menu {
-    display: block;
-}
+        #options button {
+            display: block;
+            width: 100%;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            padding: 12px 20px;
+            text-align: left;
+            cursor: pointer;
+            transition: var(--transition);
+            white-space: nowrap;
+            font-size: 0.9rem;
+        }
 
+        #options button:hover {
+            background: var(--accent);
+        }
 
-
-.mobile-menu-btn {
-    display: none;
-    font-size: 24px;
-    cursor: pointer;
-}
-
+        .mobile-menu-btn {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
 /* ========== VIDEO SLIDER SECTION ========== */
 .video-slider-container {
     position: relative;

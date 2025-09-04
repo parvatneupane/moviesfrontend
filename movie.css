@@ -397,6 +397,7 @@ header {
     height: 500px;
     display: flex;
     flex-direction: column;
+    margin-bottom: 100px;
 }
 
 /* Card image */
@@ -438,6 +439,7 @@ header {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
+    
 }
 
 .card-title {
@@ -511,7 +513,7 @@ header {
     justify-content: center;
     flex-wrap: wrap;
     gap: 10px;
-    margin-top: 100px;
+    
 }
 
 .pagination button {

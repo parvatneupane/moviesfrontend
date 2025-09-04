@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initCategoryNavigation();
     initHeaderScrollEffect();
     initLazyLoading();
+      initUserDropdown();
 });
 
 // ========== MOBILE MENU FUNCTIONALITY ==========
@@ -128,7 +129,7 @@ function initMovieCardInteractions() {
             watchBtn.addEventListener('click', function(e) {
                 e.preventDefault();
                 const movieTitle = card.querySelector('.card-title').textContent;
-                alert(`Starting playback: ${movieTitle}`);
+                window.location.href = "moviedetail.html";
             });
         }
         
@@ -138,7 +139,7 @@ function initMovieCardInteractions() {
             detailsBtn.addEventListener('click', function(e) {
                 e.preventDefault();
                 const movieTitle = card.querySelector('.card-title').textContent;
-                alert(`Showing details for: ${movieTitle}`);
+                window.location.href = "moviedetail.html";
             });
         }
         
@@ -264,7 +265,8 @@ function initVideoSlider() {
         btn.addEventListener('click', function() {
             const slide = this.closest('.video-slide');
             const title = slide.querySelector('h2').textContent;
-            alert(`Playing trailer for: ${title}`);
+
+             window.location.href = "moviedetail.html";
         });
     });
     
@@ -369,7 +371,7 @@ function initCategoryNavigation() {
     categoryCards.forEach(card => {
         card.addEventListener('click', function() {
             const category = this.querySelector('h3').textContent;
-            alert(`Showing movies in category: ${category}`);
+            window.location.href = "movie.html";
         });
         
         // Add hover effect
@@ -471,6 +473,32 @@ function throttle(func, limit) {
 // Additional functionality for grid items
 document.querySelectorAll(".grid-item").forEach(item => {
     item.addEventListener("click", () => {
-        window.location.href = "detailtry.html";
+        window.location.href = "moviedetail.html";
     });
 });
+
+
+
+//login
+
+     // ========== USER DROPDOWN ==========
+        function initUserDropdown() {
+            const btn = document.getElementById("mainBtn");
+            const options = document.getElementById("options");
+
+            // Toggle options when button is clicked
+            btn.addEventListener("click", (e) => {
+                e.stopPropagation();
+                options.classList.toggle("show");
+            });
+
+            // Hide options when clicking outside
+            document.addEventListener("click", () => {
+                options.classList.remove("show");
+            });
+
+            // Prevent hiding when clicking inside options
+            options.addEventListener("click", (e) => {
+                e.stopPropagation();
+            });
+        }

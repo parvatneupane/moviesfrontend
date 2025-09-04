@@ -265,7 +265,7 @@ function initMovieInteractions() {
             watchBtn.addEventListener('click', function(e) {
                 e.preventDefault();
                 const movieTitle = card.querySelector('.card-title').textContent;
-                showNotification(`Playing: ${movieTitle}`);
+                window.location.href = "moviedetail.html";
             });
         }
         
@@ -276,7 +276,7 @@ function initMovieInteractions() {
                 e.preventDefault();
                 const movieTitle = card.querySelector('.card-title').textContent;
                 // In a real app, this would navigate to a details page
-                showNotification(`Showing details for: ${movieTitle}`);
+                window.location.href = "moviedetail.html";
             });
         }
         
@@ -443,3 +443,9 @@ window.addEventListener('resize', debounce(function() {
     }
 }, 250));
     
+// Additional functionality for grid items
+document.querySelectorAll(".movies-grid").forEach(item => {
+    item.addEventListener("click", () => {
+        window.location.href = "moviedetail.html";
+    });
+});
