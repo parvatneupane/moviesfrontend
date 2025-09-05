@@ -241,18 +241,16 @@ a:hover {
 /* ========== SECONDARY ACTIONS ========== */
 /* Back to home link */
 .back-home {
-    text-align: center;
-    margin-top: 20px;
+    
+    margin: 20px;
 }
 
 .back-home a {
-    color: var(--success);
+  
     font-weight: 500;
 }
 
-.back-home a:hover {
-    text-decoration: underline;
-}
+
 
 /* ========== MOBILE RESPONSIVENESS ========== */
 /* Adjust styles for smaller screens */
