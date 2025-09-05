@@ -16,37 +16,50 @@
     <header>
         <div class="container">
             <nav class="navbar">
-                <!-- Logo -->
+
+
+                
+                <!-- Logo section -->
                 <a href="home.html" class="logo">
                     <i class="fas fa-film"></i>
                     Movie<span>Talks</span>
                 </a>
                 
-                <!-- Navigation Links -->
+                <!-- Main navigation links -->
                 <ul class="nav-links">
-                    <li><a href="home.html">Home</a></li>
+                    <li><a href="home.html" >Home</a></li>
                     <li><a href="movie.html">Movies</a></li>
-                    <li><a href="mylist.html">My List</a></li>                 
+                    <li><a href="mylist.html">My List</a></li>                    
                     <li><a href="aboutus.html">About Us</a></li>
                     <li><a href="contactus.html" class="active">Contact Us</a></li>
                 </ul>
                 
-                <!-- Search Bar -->
+                <!-- Search functionality -->
                 <div class="search-bar">
                     <i class="fas fa-search"></i>
                     <input type="text" placeholder="Search movies...">
                 </div>
                 
-                <!-- User Actions -->
-                <div class="user-actions">
-                    <a href="#" aria-label="Notifications"><i class="fas fa-bell"></i></a>
-                    <a href="#" aria-label="User profile"><i class="fas fa-user"></i></a>
-                </div>
+               
+      
+                <!-- User account actions -->
+                <div class="user-dropdown">
+                    <button id="mainBtn" aria-label="User profile">
+                       <i class="fas fa-user"></i>
+                        
+
+                    </button>
+
+                    <!-- Dropdown options -->
+                    <div id="options">
+                        <button onclick="window.location.href='userlogin.html'">User Login</button>
+                        <button onclick="window.location.href='adminlogin.html'">Admin Login</button>
+               
+                        <button>Logout</button>
+                    </div>
+                </div>    
+               
                 
-                <!-- Mobile Menu Button -->
-                <div class="mobile-menu-btn" aria-label="Toggle navigation menu">
-                    <i class="fas fa-bars"></i>
-                </div>
             </nav>
         </div>
     </header>
@@ -71,7 +84,7 @@
                             </div>
                             <div class="info-content">
                                 <h3>Our Location</h3>
-                                <p>123 Cinema Street, Movie City, MC 12345</p>
+                                <p>Gaindaot-4, Nawalpur</p>
                             </div>
                         </div>
                         
@@ -81,7 +94,7 @@
                             </div>
                             <div class="info-content">
                                 <h3>Phone Number</h3>
-                                <p><a href="tel:+11234567890">+1 (123) 456-7890</a></p>
+                                <p><a href="tel:+11234567890">9800000001</a></p>
                             </div>
                         </div>
                         
@@ -160,7 +173,7 @@
                             <i class="fas fa-chevron-down"></i>
                         </div>
                         <div class="faq-answer">
-                            <p>Creating an account is simple! Click on the "Sign Up" button in the top right corner, enter your email address, create a password, and you're all set. You can also sign up using your Google or Facebook account for faster access.</p>
+                            <p>Creating an account is simple! Click on the "Sign Up" button in the top right corner, enter your email address, create a password, and you're all set. You can also sign up using your Google account for faster access.</p>
                         </div>
                     </div>
                     

@@ -187,6 +187,9 @@ header {
     font-size: 1rem;
 }
 
+
+
+
         /* User dropdown styles */
         .user-dropdown {
             position: relative;
@@ -562,6 +565,7 @@ header {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 25px;
+    margin-top: 20px;
 }
 
 .category-card {

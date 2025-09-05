@@ -364,14 +364,14 @@ function showNotification(message) {
     }, 3000);
 }
 
-// ========== CATEGORY NAVIGATION ==========
+// ========== movietype category ==========
 function initCategoryNavigation() {
     const categoryCards = document.querySelectorAll('.category-card');
     
     categoryCards.forEach(card => {
         card.addEventListener('click', function() {
             const category = this.querySelector('h3').textContent;
-            window.location.href = "movie.html";
+            window.location.href = "moviedetail.html";
         });
         
         // Add hover effect

@@ -30,6 +30,10 @@ function initMovieTalks() {
     
     // Initialize stats update (for demonstration)
     initDemoStats();
+
+
+    //init dropdown
+    initUserDropdown()
 }
 
 /**
@@ -384,3 +388,24 @@ window.movieTalks = {
     showNotification
 };
     
+//dropdown
+  function initUserDropdown() {
+            const btn = document.getElementById("mainBtn");
+            const options = document.getElementById("options");
+
+            // Toggle options when button is clicked
+            btn.addEventListener("click", (e) => {
+                e.stopPropagation();
+                options.classList.toggle("show");
+            });
+
+            // Hide options when clicking outside
+            document.addEventListener("click", () => {
+                options.classList.remove("show");
+            });
+
+            // Prevent hiding when clicking inside options
+            options.addEventListener("click", (e) => {
+                e.stopPropagation();
+            });
+        }

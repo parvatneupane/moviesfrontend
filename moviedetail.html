@@ -16,9 +16,12 @@
 
 <body>
     <!-- Header with navigation -->
-    <header>
+   <header>
         <div class="container">
             <nav class="navbar">
+
+
+                
                 <!-- Logo section -->
                 <a href="home.html" class="logo">
                     <i class="fas fa-film"></i>
@@ -27,7 +30,7 @@
                 
                 <!-- Main navigation links -->
                 <ul class="nav-links">
-                    <li><a href="home.html">Home</a></li>
+                    <li><a href="home.html" >Home</a></li>
                     <li><a href="movie.html">Movies</a></li>
                     <li><a href="mylist.html">My List</a></li>                    
                     <li><a href="aboutus.html">About Us</a></li>
@@ -40,16 +43,26 @@
                     <input type="text" placeholder="Search movies...">
                 </div>
                 
+               
+      
                 <!-- User account actions -->
-                <div class="user-actions">
-                    <a href="#" aria-label="Notifications"><i class="fas fa-bell"></i></a>
-                    <a href="#" aria-label="User profile"><i class="fas fa-user"></i></a>
-                </div>
+                <div class="user-dropdown">
+                    <button id="mainBtn" aria-label="User profile">
+                       <i class="fas fa-user"></i>
+                        
+
+                    </button>
+
+                    <!-- Dropdown options -->
+                    <div id="options">
+                        <button onclick="window.location.href='userlogin.html'">User Login</button>
+                        <button onclick="window.location.href='adminlogin.html'">Admin Login</button>
+               
+                        <button>Logout</button>
+                    </div>
+                </div>    
+               
                 
-                <!-- Mobile menu toggle -->
-                <div class="mobile-menu-btn" aria-label="Toggle navigation menu">
-                    <i class="fas fa-bars"></i>
-                </div>
             </nav>
         </div>
     </header>

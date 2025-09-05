@@ -16,37 +16,50 @@
     <header>
         <div class="container">
             <nav class="navbar">
-                <!-- Brand Logo -->
-                <a href="#" class="logo">
+
+
+                
+                <!-- Logo section -->
+                <a href="home.html" class="logo">
                     <i class="fas fa-film"></i>
                     Movie<span>Talks</span>
                 </a>
                 
-                <!-- Main Navigation -->
+                <!-- Main navigation links -->
                 <ul class="nav-links">
-                    <li><a href="home.html">Home</a></li>
+                    <li><a href="home.html" >Home</a></li>
                     <li><a href="movie.html" class="active">Movies</a></li>
-                    <li><a href="mylist.html">My List</a></li>                 
+                    <li><a href="mylist.html">My List</a></li>                    
                     <li><a href="aboutus.html">About Us</a></li>
                     <li><a href="contactus.html">Contact Us</a></li>
                 </ul>
                 
-                <!-- Search Functionality -->
+                <!-- Search functionality -->
                 <div class="search-bar">
                     <i class="fas fa-search"></i>
                     <input type="text" placeholder="Search movies...">
                 </div>
                 
-                <!-- User Account Actions -->
-                <div class="user-actions">
-                    <a href="#" aria-label="Notifications"><i class="fas fa-bell"></i></a>
-                    <a href="#" aria-label="User Profile"><i class="fas fa-user"></i></a>
-                </div>
+               
+      
+                <!-- User account actions -->
+                <div class="user-dropdown">
+                    <button id="mainBtn" aria-label="User profile">
+                       <i class="fas fa-user"></i>
+                        
+
+                    </button>
+
+                    <!-- Dropdown options -->
+                    <div id="options">
+                        <button onclick="window.location.href='userlogin.html'">User Login</button>
+                        <button onclick="window.location.href='adminlogin.html'">Admin Login</button>
+               
+                        <button>Logout</button>
+                    </div>
+                </div>    
+               
                 
-                <!-- Mobile Menu Button -->
-                <div class="mobile-menu-btn" aria-label="Toggle navigation menu">
-                    <i class="fas fa-bars"></i>
-                </div>
             </nav>
         </div>
     </header>
@@ -107,10 +120,10 @@
                             <label for="rating">Rating</label>
                             <select class="filter-select" id="rating">
                                 <option value="">Any Rating</option>
-                                <option value="9">9+ Stars</option>
-                                <option value="8">8+ Stars</option>
-                                <option value="7">7+ Stars</option>
-                                <option value="6">6+ Stars</option>
+                                <option value="4">4+ Stars</option>
+                                <option value="3">3+ Stars</option>
+                                <option value="2">2+ Stars</option>
+                                <option value="1">1+ Stars</option>
                             </select>
                         </div>
                     </div>
@@ -139,7 +152,7 @@
                             <div class="card-meta">
                                 <span>2023 • Action</span>
                                 <span class="card-rating">
-                                    <i class="fas fa-star"></i> 4.8
+                                    <i class="fas fa-star"></i> 3.5
                                 </span>
                             </div>
                             <p class="card-description">A soldier fighting aliens gets to relive the same day over and over again, becoming better skilled each time.</p>
@@ -161,7 +174,7 @@
                             <div class="card-meta">
                                 <span>2022 • Sci-Fi</span>
                                 <span class="card-rating">
-                                    <i class="fas fa-star"></i> 4.6
+                                    <i class="fas fa-star"></i> 2.6
                                 </span>
                             </div>
                             <p class="card-description">A team of astronauts embarks on a perilous journey through a newly discovered wormhole to find a new home for humanity.</p>
@@ -182,7 +195,7 @@
                             <div class="card-meta">
                                 <span>2023 • Drama</span>
                                 <span class="card-rating">
-                                    <i class="fas fa-star"></i> 4.9
+                                    <i class="fas fa-star"></i> 1.9
                                 </span>
                             </div>
                             <p class="card-description">A woman discovers a series of letters that reveal her grandmother's secret life during WWII.</p>

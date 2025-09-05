@@ -10,6 +10,8 @@ document.addEventListener('DOMContentLoaded', function() {
     initMovieInteractions();
     initPagination();
     initFooterAccordions();
+     //dropdown fn
+    initUserDropdown();
     
     console.log('MovieTalks initialization complete!');
 });
@@ -193,11 +195,11 @@ function applyMovieFilters(filters) {
             }
         }
         
-        // Rating filter
-        if (filters.rating && rating < parseInt(filters.rating)) {
-            shouldShow = false;
-        }
-        
+ if (filters.rating && rating < parseInt(filters.rating)) {
+    shouldShow = false;
+}
+
+    
         // Show/hide based on filters
         card.style.display = shouldShow ? 'block' : 'none';
         if (shouldShow) visibleCount++;
@@ -449,3 +451,25 @@ document.querySelectorAll(".movies-grid").forEach(item => {
         window.location.href = "moviedetail.html";
     });
 });
+
+
+  function initUserDropdown() {
+            const btn = document.getElementById("mainBtn");
+            const options = document.getElementById("options");
+
+            // Toggle options when button is clicked
+            btn.addEventListener("click", (e) => {
+                e.stopPropagation();
+                options.classList.toggle("show");
+            });
+
+            // Hide options when clicking outside
+            document.addEventListener("click", () => {
+                options.classList.remove("show");
+            });
+
+            // Prevent hiding when clicking inside options
+            options.addEventListener("click", (e) => {
+                e.stopPropagation();
+            });
+        }

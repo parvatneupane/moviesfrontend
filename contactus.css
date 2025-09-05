@@ -94,139 +94,179 @@
             transform: translateY(-3px);
         }
 
-        /* ========== HEADER & NAVIGATION ========== */
-        header {
-            background: rgba(7, 7, 16, 0.9);
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-            transition: var(--transition);
-        }
 
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
-        }
+/* ========== HEADER & NAVIGATION ========== */
+header {
+    background: rgba(7, 7, 16, 0.9);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    transition: var(--transition);
+}
 
-        /* Logo styles */
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-size: 28px;
-            font-weight: 700;
-            color: var(--text-primary);
-        }
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
 
-        .logo span {
-            color: var(--accent);
-        }
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--text-primary);
+}
 
-        .logo i {
-            font-size: 32px;
-            color: var(--secondary);
-        }
+.logo span {
+    color: var(--accent);
+}
 
-        /* Navigation links */
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 30px;
-        }
+.logo i {
+    font-size: 32px;
+    color: var(--secondary);
+}
 
-        .nav-links li a {
-            font-weight: 500;
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links li a {
+    font-weight: 500;
+    position: relative;
+    padding: 8px 5px;
+}
+
+.nav-links li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    background: var(--accent);
+    border-radius: 2px;
+    transition: var(--transition);
+}
+
+.nav-links li a:hover::after,
+.nav-links li a.active::after {
+    width: 100%;
+}
+
+.nav-links li a.active {
+    color: var(--accent);
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 50px;
+    padding: 8px 15px;
+    width: 240px;
+    transition: var(--transition);
+}
+
+.search-bar:hover {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.search-bar input {
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    width: 100%;
+    padding: 5px 10px;
+    outline: none;
+    font-size: 0.95rem;
+}
+
+.search-bar i {
+    color: var(--text-secondary);
+    font-size: 1rem;
+}
+
+
+
+
+        /* User dropdown styles */
+        .user-dropdown {
             position: relative;
-            padding: 8px 5px;
         }
 
-        .nav-links li a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 3px;
-            bottom: 0;
-            left: 0;
-            background: var(--accent);
-            border-radius: 2px;
-            transition: var(--transition);
-        }
-
-        .nav-links li a:hover::after,
-        .nav-links li a.active::after {
-            width: 100%;
-        }
-
-        .nav-links li a.active {
-            color: var(--accent);
-        }
-
-        /* Search bar */
-        .search-bar {
-            display: flex;
-            align-items: center;
-            background: rgba(255, 255, 255, 0.08);
-            border-radius: 50px;
-            padding: 8px 15px;
-            width: 240px;
-            transition: var(--transition);
-        }
-
-        .search-bar:hover {
-            background: rgba(255, 255, 255, 0.12);
-        }
-
-        .search-bar input {
-            background: transparent;
+        #mainBtn {
+              background: rgba(255, 255, 255, 0.08);
             border: none;
-            color: var(--text-primary);
-            width: 100%;
-            padding: 5px 10px;
-            outline: none;
-            font-size: 0.95rem;
-        }
-
-        .search-bar i {
-            color: var(--text-secondary);
-            font-size: 1rem;
-        }
-
-        /* User actions */
-        .user-actions {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .user-actions a {
-            font-size: 1.2rem;
+            border-radius: 50%;
             width: 40px;
             height: 40px;
+            color: white;
+            cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.08);
             transition: var(--transition);
         }
 
-        .user-actions a:hover {
-            background: var(--accent);
-            transform: translateY(-3px);
+        #mainBtn:hover {
+            background: var(--accent-hover);
+            transform: scale(1.1);
         }
 
-        /* Mobile menu button */
+     
+        #options {
+            position: absolute;
+            top: 50px;
+            right: 0;
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 10px 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: var(--transition);
+            z-index: 1000;
+            min-width: 150px;
+        }
+
+        #options.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        #options button {
+            display: block;
+            width: 100%;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            padding: 12px 20px;
+            text-align: left;
+            cursor: pointer;
+            transition: var(--transition);
+            white-space: nowrap;
+            font-size: 0.9rem;
+        }
+
+        #options button:hover {
+            background: var(--accent);
+        }
+
         .mobile-menu-btn {
             display: none;
             font-size: 24px;
             cursor: pointer;
         }
-
         /* ========== PAGE HERO ========== */
         .page-hero {
             position: relative;

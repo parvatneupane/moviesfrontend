@@ -368,6 +368,9 @@ const MovieDetailApp = (function() {
         }, 300);
     }
 
+
+    
+
     // =========================================================================
     // PUBLIC API
     // =========================================================================
@@ -382,6 +385,7 @@ const MovieDetailApp = (function() {
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize the application
     MovieDetailApp.init();
+    initUserDropdown();
     
     // Additional initialization can go here
     console.log('DOM fully loaded and parsed');
@@ -432,3 +436,25 @@ function debounce(func, wait, immediate) {
 window.addEventListener('scroll', debounce(function() {
     // Handle scroll events efficiently
 }, 100));
+
+ // ========== USER DROPDOWN ==========
+        function initUserDropdown() {
+            const btn = document.getElementById("mainBtn");
+            const options = document.getElementById("options");
+
+            // Toggle options when button is clicked
+            btn.addEventListener("click", (e) => {
+                e.stopPropagation();
+                options.classList.toggle("show");
+            });
+
+            // Hide options when clicking outside
+            document.addEventListener("click", () => {
+                options.classList.remove("show");
+            });
+
+            // Prevent hiding when clicking inside options
+            options.addEventListener("click", (e) => {
+                e.stopPropagation();
+            });
+        }
