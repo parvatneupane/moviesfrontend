@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initCategoryNavigation();
     initHeaderScrollEffect();
     initLazyLoading();
-      initUserDropdown();
+    initUserDropdown();
 });
 
 // ========== MOBILE MENU FUNCTIONALITY ==========

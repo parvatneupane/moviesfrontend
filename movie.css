@@ -416,7 +416,7 @@ header {
 }
 
 .movie-card {
-    composes: card;
+      background: var(--card-bg);
     height: 500px;
     display: flex;
     flex-direction: column;
@@ -462,7 +462,7 @@ header {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    
+      background: var(--card-bg);
 }
 
 .card-title {

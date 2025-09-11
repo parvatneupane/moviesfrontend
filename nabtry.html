@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MovieTalks - Authentication</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        :root {
+            --dark-bg: #0c0c14;
+            --darker-bg: #070710;
+            --card-bg: #161626;
+            --card-hover: #1d1d33;
+            --accent: #ff2a6d;
+            --accent-hover: #ff4d85;
+            --secondary: #05d9e8;
+            --text-primary: #ffffff;
+            --text-secondary: #b3b3cc;
+            --border: #2a2a3a;
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        body {
+            background: linear-gradient(135deg, var(--dark-bg) 0%, var(--darker-bg) 100%);
+            color: var(--text-primary);
+            min-height: 100vh;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background: rgba(7, 7, 16, 0.9);
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            transition: var(--transition);
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+        
+        .logo span {
+            color: var(--accent);
+        }
+        
+        .logo i {
+            font-size: 32px;
+            color: var(--secondary);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        .nav-links li a {
+            font-weight: 500;
+            position: relative;
+            padding: 8px 5px;
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .nav-links li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            bottom: 0;
+            left: 0;
+            background: var(--accent);
+            border-radius: 2px;
+            transition: var(--transition);
+        }
+        
+        .nav-links li a:hover::after,
+        .nav-links li a.active::after {
+            width: 100%;
+        }
+        
+        .nav-links li a.active {
+            color: var(--accent);
+        }
+        
+        .search-bar {
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 50px;
+            padding: 8px 15px;
+            width: 240px;
+            transition: var(--transition);
+        }
+        
+        .search-bar:hover {
+            background: rgba(255, 255, 255, 0.12);
+        }
+        
+        .search-bar input {
+            background: transparent;
+            border: none;
+            color: var(--text-primary);
+            width: 100%;
+            padding: 5px 10px;
+            outline: none;
+            font-size: 0.95rem;
+        }
+        
+        .search-bar i {
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+        
+        /* User authentication area */
+        .auth-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .sign-in-btn {
+            background: linear-gradient(90deg, var(--accent) 0%, #ff5e94 100%);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 5px 15px rgba(255, 42, 109, 0.4);
+        }
+        
+        .sign-in-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 42, 109, 0.6);
+        }
+        
+        /* User dropdown styles - initially hidden */
+        .user-dropdown {
+            position: relative;
+            display: none;
+        }
+        
+        #userBtn {
+            background: rgba(255, 255, 255, 0.08);
+            border: none;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            color: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            font-size: 1.2rem;
+        }
+        
+        #userBtn:hover {
+            background: var(--accent-hover);
+            transform: scale(1.1);
+        }
+        
+        #userOptions {
+            position: absolute;
+            top: 55px;
+            right: 0;
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 10px 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: var(--transition);
+            z-index: 1000;
+            min-width: 200px;
+        }
+        
+        #userOptions.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        #userOptions button, #userOptions a {
+            display: block;
+            width: 100%;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            padding: 12px 20px;
+            text-align: left;
+            cursor: pointer;
+            transition: var(--transition);
+            white-space: nowrap;
+            font-size: 0.95rem;
+            text-decoration: none;
+        }
+        
+        #userOptions button:hover, #userOptions a:hover {
+            background: var(--accent);
+        }
+        
+        .user-info {
+            padding: 12px 20px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 5px;
+        }
+        
+        .user-info .user-name {
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 3px;
+        }
+        
+        .user-info .user-email {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+        
+        /* Main content */
+        .main-content {
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .hero {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, var(--accent) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        
+        .auth-demo {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 30px;
+            margin: 40px auto;
+            max-width: 600px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .auth-demo h2 {
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+        
+        .demo-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .demo-btn {
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+        }
+        
+        .login-demo {
+            background: linear-gradient(90deg, var(--accent) 0%, #ff5e94 100%);
+            color: white;
+        }
+        
+        .logout-demo {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-primary);
+            border: 1px solid var(--border);
+        }
+        
+        .demo-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Responsive design */
+        @media (max-width: 900px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .search-bar {
+                width: 180px;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .search-bar {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .demo-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">
+                    <i class="fas fa-film"></i>
+                    Movie<span>Talks</span>
+                </a>
+
+                <ul class="nav-links">
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="#">Movies</a></li>
+                    <li><a href="#">My List</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search movies..." />
+                </div>
+                
+                <div class="auth-container">
+                    <!-- Sign In Button (visible when not logged in) -->
+                    <button class="sign-in-btn" id="signInBtn">
+                        <i class="fas fa-sign-in-alt"></i> Sign In
+                    </button>
+                    
+                    <!-- User Dropdown (hidden when not logged in) -->
+                    <div class="user-dropdown" id="userDropdown">
+                        <button id="userBtn" aria-label="User profile">
+                            <i class="fas fa-user"></i>
+                        </button>
+
+                        <div id="userOptions">
+                            <div class="user-info">
+                                <div class="user-name">John Doe</div>
+                                <div class="user-email">john.doe@example.com</div>
+                            </div>
+                            
+                            <a href="#profile"><i class="fas fa-user-circle"></i> My Profile</a>
+                            <a href="#dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                            <a href="#favorites"><i class="fas fa-heart"></i> My Favorites</a>
+                            
+                            <div style="height: 1px; background: var(--border); margin: 8px 0;"></div>
+                            
+                            <button id="logoutBtn">
+                                <i class="fas fa-sign-out-alt"></i> Logout
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <main class="main-content">
+            <div class="hero">
+                <h1>Experience Cinema Like Never Before</h1>
+                <p>Join MovieTalks to discover, discuss, and save your favorite movies. Connect with a community of film enthusiasts and never miss a great movie again.</p>
+            </div>
+            
+            <div class="auth-demo">
+                <h2>Authentication Demo</h2>
+                <p>Use the buttons below to simulate login and logout states. The navbar will change accordingly.</p>
+                
+                <div class="demo-buttons">
+                    <button class="demo-btn login-demo" id="loginDemo">
+                        <i class="fas fa-sign-in-alt"></i> Simulate Login
+                    </button>
+                    <button class="demo-btn logout-demo" id="logoutDemo">
+                        <i class="fas fa-sign-out-alt"></i> Simulate Logout
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // DOM Elements
+        const signInBtn = document.getElementById('signInBtn');
+        const userDropdown = document.getElementById('userDropdown');
+        const userBtn = document.getElementById('userBtn');
+        const userOptions = document.getElementById('userOptions');
+        const loginDemo = document.getElementById('loginDemo');
+        const logoutDemo = document.getElementById('logoutDemo');
+        const logoutBtn = document.getElementById('logoutBtn');
+        
+        // Check if user is logged in (in a real app, this would come from your authentication system)
+        let isLoggedIn = false;
+        
+        // Update UI based on authentication state
+        function updateAuthUI() {
+            if (isLoggedIn) {
+                // User is logged in - show dropdown, hide sign in button
+                signInBtn.style.display = 'none';
+                userDropdown.style.display = 'block';
+            } else {
+                // User is not logged in - show sign in button, hide dropdown
+                signInBtn.style.display = 'flex';
+                userDropdown.style.display = 'none';
+                userOptions.classList.remove('show');
+            }
+        }
+        
+        // Toggle dropdown visibility
+        function toggleDropdown() {
+            userOptions.classList.toggle('show');
+        }
+        
+        // Event Listeners
+        userBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            toggleDropdown();
+        });
+        
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!userBtn.contains(e.target) && !userOptions.contains(e.target)) {
+                userOptions.classList.remove('show');
+            }
+        });
+        
+        // Simulate login
+        loginDemo.addEventListener('click', function() {
+            isLoggedIn = true;
+            updateAuthUI();
+            userOptions.classList.remove('show');
+        });
+        
+        // Simulate logout
+        logoutDemo.addEventListener('click', function() {
+            isLoggedIn = false;
+            updateAuthUI();
+        });
+        
+        logoutBtn.addEventListener('click', function() {
+            isLoggedIn = false;
+            updateAuthUI();
+        });
+        
+        // Sign in button opens login page (simulated)
+        signInBtn.addEventListener('click', function() {
+            alert('Redirecting to login page...');
+            // In a real app: window.location.href = '/login';
+        });
+        
+        // Initialize UI
+        updateAuthUI();
+    </script>
+</body>
+</html>

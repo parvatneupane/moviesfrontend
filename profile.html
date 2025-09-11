@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile - MovieTalk</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="profile.css">
+</head>
+
+<body>
+    <!-- Header with navigation -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <!-- Logo section -->
+                <a href="home.html" class="logo">
+                    <i class="fas fa-film"></i>
+                    Movie<span>Talks</span>
+                </a>
+                
+                <!-- Main navigation links -->
+                <ul class="nav-links">
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="movie.html">Movies</a></li>
+                    <li><a href="mylist.html">My List</a></li>                    
+                    <li><a href="aboutus.html">About Us</a></li>
+                    <li><a href="contactus.html">Contact Us</a></li>
+                    <li><a href="profile.html" class="active">Profile</a></li>
+                </ul>
+                
+                <!-- Search functionality -->
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search movies...">
+                </div>
+                
+                <!-- User account actions -->
+                <div class="user-dropdown">
+                    <button id="mainBtn" aria-label="User profile">
+                       <i class="fas fa-user"></i>
+                    </button>
+                </div>    
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Profile Content -->
+    <div class="container profile-container">
+        <!-- User Information Card -->
+        <div class="profile-card">
+            <div class="profile-header">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" alt="User Avatar" class="avatar">
+                <div class="user-info">
+                    <h1>Emily Johnson</h1>
+                    <span class="badge">Movietalk Member</span>
+                </div>
+            </div>
+
+            <div class="profile-details">
+                <div class="detail-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>emily.j@example.com</span>
+                </div>
+                <div class="detail-item">
+                    <i class="fas fa-calendar"></i>
+                    <span>Joined: Jan 2021</span>
+                </div>
+                <div class="detail-item">
+                    <i class="fas fa-heart"></i>
+                    <span>Movie Lover</span>
+                </div>
+                <div class="detail-item">
+                    <i class="fas fa-users"></i>
+                    <span>Movie Talk Army</span>
+                </div>
+            </div>
+            
+            <!-- Logout Button -->
+            <button class="logout-btn" onclick="handleLogout()">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </button>
+        </div>
+        
+        <!-- Profile Update Card -->
+        <div class="profile-card">
+            <div class="tabs">
+                <div class="tab active" data-tab="password"><i class="fas fa-key"></i> Change Profile</div>
+            </div>
+            
+            <div class="tab-content active" id="password-tab">
+                <form id="passwordForm">
+                    <div class="form-group">
+                        <label for="newusername"><i class="fas fa-user"></i> New Username</label>
+                        <input type="text" id="newusername" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="currentPassword"><i class="fas fa-lock"></i> Current Password</label>
+                        <input type="password" id="currentPassword" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="newPassword"><i class="fas fa-key"></i> New Password</label>
+                        <input type="password" id="newPassword" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmPassword"><i class="fas fa-check-circle"></i> Confirm New Password</label>
+                        <input type="password" id="confirmPassword" class="form-control" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i> Update Profile</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer with site links and information -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <!-- Company information -->
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <i class="fas fa-film"></i>
+                        Movie<span>Talks</span>
+                    </div>
+                    <p class="footer-about">Your ultimate destination for movie reviews, recommendations, and entertainment news. Discover your next favorite film with us.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Quick links -->
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="home.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Movies</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> TV Shows</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> New Releases</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Support links -->
+                <div class="footer-column">
+                    <h3>Support</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Contact Us</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> FAQ</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Privacy Policy</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Copyright information -->
+            <div class="footer-bottom">
+                <p>&copy; 2023 Movie Talks. All Rights Reserved.</p>
+                <p>Made with <i class="fas fa-heart" style="color: var(--accent);"></i> for movie lovers</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Notification Element -->
+    <div class="notification" id="notification">Profile updated successfully!</div>
+
+    <!-- JavaScript functionality -->
+   
+    <script src="profile.js"></script>
+</body>
+</html>
